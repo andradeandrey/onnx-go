@@ -34,7 +34,7 @@ func (m *Model) Decode(data []byte) error {
 	if err != nil {
 		return err
 	}
-	return m.decode(pbModel)
+	return m.DecodeProto(pbModel)
 }
 
 // GetNodeByName is a utility method that returns a node of the computation graph
@@ -80,7 +80,8 @@ func (m *Model) processValue(io *pb.ValueInfoProto) (graph.Node, error) {
 	return n, nil
 }
 
-func (m *Model) decode(model *pb.ModelProto) error {
+// DecodeProto decode a protobuf definition inside the model
+func (m *Model) DecodeProto(model *pb.ModelProto) error {
 	rv := reflect.ValueOf(m.backend)
 	if rv.Kind() != reflect.Ptr || rv.IsNil() {
 		return &InvalidUnmarshalError{reflect.TypeOf(m.backend)}
