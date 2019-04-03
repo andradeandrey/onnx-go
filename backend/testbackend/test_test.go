@@ -1,4 +1,4 @@
-package tests
+package testbackend
 
 import (
 	"fmt"
