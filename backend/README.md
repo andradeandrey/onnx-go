@@ -2,7 +2,7 @@
 
 This directory contains (sample) backend implementation. 
 
-Any backend implementing a conputation method (symbolic or not) should fulfil the `ComputationBackend` interface:
+Any backend implementing a computation method (symbolic or not) should fulfil the `ComputationBackend` interface:
 
 [embedmd]:# (computation_backend.go /type ComputationBackend/ /}/)
 ```go
